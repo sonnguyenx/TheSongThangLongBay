@@ -35,15 +35,15 @@ function sectionScrollActive() {
 }
 
 // SCROLL DOWN EVENT
-const deepLinkClick = document.querySelectorAll('.nav__page--item-numb a')
 window.addEventListener('scroll', scrollDown)
+
+const deepLinkClick = document.querySelectorAll('.nav__page--item-numb a')
+var navScroll = document.querySelector('.nav__scroll-effect--text a')
 
 function scrollDown() {
   var anchorMenu = [],
     heightScreen,
     stepMenu
-
-  var navScroll = document.querySelector('.nav__scroll--text a')
 
   deepLinkClick.forEach((item) => {
     anchorMenu.push(item.hash)
@@ -56,9 +56,27 @@ function scrollDown() {
   stepMenu = Math.floor(window.scrollY / heightScreen)
 
   if (stepMenu < anchorMenu.length) {
-    navScroll.style.display = 'block'
+    // navScroll.style.display = 'block'
     navScroll.setAttribute('href', `${anchorMenu[stepMenu]}`)
   } else {
     navScroll.style.display = 'none'
   }
+}
+
+// HEADER HERO
+window.addEventListener('scroll', headerHeroF)
+var headerHero = document.querySelector('.header-hero')
+var nav = document.querySelector('.nav')
+
+function headerHeroF() {
+  var heightHero = headerHero.offsetHeight
+
+  if (window.scrollY >= heightHero) {
+    nav.classList.add('activeNav')
+  } else {
+    nav.classList.remove('activeNav')
+  }
+
+  console.log(heightHero)
+  console.log(window.scrollY)
 }
