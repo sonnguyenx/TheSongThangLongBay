@@ -32,6 +32,17 @@ function sectionScrollActive() {
       navText[index].classList.remove('active')
     }
   })
+
+  section.forEach((item) => {
+    if (
+      window.scrollY >= item.offsetTop &&
+      window.scrollY < item.offsetTop + item.offsetHeight
+    ) {
+      navText[index].classList.add('activeSectionGradien')
+    } else {
+      navText[index].classList.remove('activeSectionGradien')
+    }
+  })
 }
 
 // SCROLL DOWN EVENT
@@ -65,18 +76,25 @@ function scrollDown() {
 
 // HEADER HERO
 window.addEventListener('scroll', headerHeroF)
-var headerHero = document.querySelector('.header-hero')
-var nav = document.querySelector('.nav')
 
 function headerHeroF() {
+  var headerHero = document.querySelector('.header-hero')
+  var footer = document.querySelector('.footer')
+  var nav = document.querySelector('.nav')
   var heightHero = headerHero.offsetHeight
 
   if (window.scrollY >= heightHero) {
-    nav.classList.add('activeNav')
+    nav.classList.add('activeDisplay')
+    footer.classList.add('activeDisplay')
   } else {
-    nav.classList.remove('activeNav')
+    nav.classList.remove('activeDisplay')
+    footer.classList.remove('activeDisplay')
   }
-
-  console.log(heightHero)
-  console.log(window.scrollY)
 }
+
+// SET DATA-HEIGHT HEADER HERO
+// var headerHero = document.querySelector('.header-hero')
+// var dataHeight = headerHero.offsetHeight
+// headerHero.setAttribute('data-height', dataHeight)
+
+// console.log(headerHero)

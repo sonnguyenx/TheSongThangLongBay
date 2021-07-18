@@ -1,0 +1,154 @@
+// HEADER HERO
+.header-hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: url("./public/img/bg-header.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    &--tlb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 6rem;
+      width: 6rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &--ts {
+      padding-top: 1.5rem;
+      width: 26vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &--under-logo {
+      width: 3rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #fff;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+  }
+
+  &__es {
+    position: absolute;
+    color: #fff;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-size: .75rem;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    span {
+      position: relative;
+      width: 0;
+      height: 0;
+      display: block;
+      border-left: .25rem solid transparent;
+      border-right: .25rem solid transparent;
+      border-bottom: .25rem solid transparent;
+      border-top: .25rem solid #fff;
+      margin: .25rem 0;
+    }
+  }
+
+  // Effects bubble styles
+  .effect-bubble {
+    display: block;
+    border-radius: 50%;
+    background-color: rgba(240, 240, 240, 0.5);
+    position: absolute;
+    z-index: 999;
+  }
+  .effect-bubble:nth-child(1) {
+    height: 2.5rem;
+    width: 2.5rem;
+    left: 3rem;
+    bottom: -12rem;
+    animation: bubble 20s infinite;
+  }
+
+  .effect-bubble:nth-child(2) {
+    height: 1rem;
+    width: 1rem;
+    left: 40%;
+    bottom: -5rem;
+    animation: bubble 25s infinite;
+  }
+
+  .effect-bubble:nth-child(3) {
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 50%;
+    bottom: -8rem;
+    animation: bubble 22s infinite;
+  }
+
+  .effect-bubble:nth-child(4) {
+    height: 2rem;
+    width: 2rem;
+    left: 65%;
+    bottom: -2rem;
+    animation: bubble 35s infinite;
+  }
+
+  .effect-bubble:nth-child(5) {
+    height: 1.5rem;
+    width: 1.5rem;
+    right: 15%;
+    bottom: -15rem;
+    animation: bubble 40s infinite;
+  }
+
+  @keyframes bubble {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-900px);}
+  }
+}
